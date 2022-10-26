@@ -1,13 +1,23 @@
 #include<winsock2.h>//winsock2的头文件
 #include<iostream>
+#include<fstream>
 using namespace std;
 
 //勿忘，链接dll的lib
 #pragma comment(lib, "ws2_32.lib")
-
+void ofstr(char c[],int len){
+   ofstream ofs;
+   ofs.open("text.txt",ios::out|ios::app);
+   for (size_t i = 0; i < len; i++)
+   {
+   
+   }
+   
+   ofs<<hex<<c<<endl;
+   ofs.close();
+}
 int  main()
 {
-
  //加载winsock2的环境
  WSADATA  wd;
  if (WSAStartup(MAKEWORD(2, 2), &wd) != 0)
@@ -36,22 +46,47 @@ int  main()
   cout << "connect  error：" << GetLastError() << endl;
   return 0;
  }
+ else{
+   cout<<"connet right!";
+ }
 
  //3接收服务端的消息
- char buf[10000] = { 0 };
- recv(s, buf, 100, 0);
- cout <<  buf << endl;
- 
+
+int  ret = 0;
+ do
+ {
+    char buf[100] = { 0 };
+
+    recv(s, buf, 100, 0);
+   
+   //  char firstNum[32] = {0};
+   for (size_t i = 0; i < 100; i++)
+   {
+      cout<<"i:"<<i<<endl;
+      cout <<int(buf[i]) << endl;
+      
+   }
+
+   //  cout << hex <<int(buf) << endl;
+
+   ofstr(buf);
+    ret++;
+   //  cout<<ret<<endl;
+
+
+ } while (ret<10);
+
 
 // 3随时给服务端发消息
-//  int  ret = 0;
-//  do
-//  {
-//     char buf[100] = {0};
-//     cout << "请输入聊天内容:";
-//     cin >> buf; 
-//     ret = send(s, buf, 100, 0); 
-//  } while (ret != SOCKET_ERROR&& ret != 0);
+
+ret = 0;
+ do
+ {
+    char buf[100] = {0};
+    cout << "请输入聊天内容:";
+    cin >> buf; 
+    ret = send(s, buf, 100, 0); 
+ } while (ret != SOCKET_ERROR&& ret != 0);
 
 
  //4.关闭监听套接字
