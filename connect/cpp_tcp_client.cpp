@@ -12,7 +12,8 @@ void ofstr(char c[],int len){
    {
    
    }
-   
+//    git config  user.name  "tyler"  
+// git config  user.email  "1291571584@qq.com"
    ofs<<hex<<c<<endl;
    ofs.close();
 }
