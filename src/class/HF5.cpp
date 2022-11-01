@@ -32,6 +32,7 @@ HF5::HF5(char *file_name, char *dataset_name, hsize_t _chunk_dims[], int time_fl
     hsize_t size[2];
     dataspace = H5Screate_simple(RANK, dims, maxdims);
     file = H5Fcreate(file_name, H5F_ACC_TRUNC, H5P_DEFAULT, H5P_DEFAULT);
+    // size[0] = _chunk_dims[0];
     size[0] = 0;
     size[1] = _chunk_dims[1];
     chunk_dims[0] = _chunk_dims[0];

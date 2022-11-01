@@ -12,7 +12,7 @@
         "${fileDirname}\\${fileBasenameNoExtension}.exe",
         "-lwsock32",
         "-I",
-        "${fileDirname}/include",
+        "${fileDirname}\\include",
         // 本机安装
         // "-I",
         // "C:\\Program Files\\HDF_Group\\HDF5\\1.10.9\\include",
@@ -44,9 +44,9 @@
 
         //HDF5
         "-I",
-        "C:\\Users\\tyler\\Desktop\\structure\\HDF5\\include\\",
+        "${fileDirname}\\HDF5\\include\\",
         "-L",
-        "C:\\Users\\tyler\\Desktop\\structure\\HDF5\\lib\\vc14\\x64\\release",
+        "${fileDirname}\\HDF5\\lib\\vc14\\x64\\release",
         "-lhdf5",
         "-lhdf5_cpp"
       ],

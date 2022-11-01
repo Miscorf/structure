@@ -1,6 +1,11 @@
 #include <winsock2.h> //winsock2的头文件
-
-#include "utils.h"
+#include <iostream>
+#include <stdint.h>
+#include <hdf5.h>
+#include <H5Cpp.h>
+#include "../include/utils.h"
+#include "../src/class/HF5.cpp"
+#include "time.h"
 
 using namespace std;
 
@@ -67,26 +72,49 @@ int main()
     cout << "check:";
     cout << int(check_buf[0]) << " " << int(check_buf[1]) << endl;
     int ret = 0;
+    cout << "epch_size:" << ep90_size << endl;
+
+    // write hdf5
+    char file_name[20] = "my_test_file.h5";
+    char dataset_name[20] = "my_test_dataset";
+    int point_num = 1; // 采样点数
+    hsize_t dim[2] = {1 * point_num, ep90_size};
+    // int data[1][3] = {{1, 1, 3}};
+    HF5 myh5 = HF5(file_name, dataset_name, dim, 0);
+    // hsize_t buf[2];
+    // myh5.get_dims(buf);
+    // cout << "buf:" << buf[0] << " " << buf[1] << endl;
+    time_t begin_time, after_time;
+    begin_time = time(NULL); //获取日历时间
+    char last_tag = check_buf[7];
+    char now_tag = 0;
     do
     {
-        int buf_size = ep90_size;
-        char buf[buf_size] = {0};
-        int recv_data_size = recv(s, buf, buf_size, 0);
+
+        after_time = time(NULL);
+        char buf[ep90_size * point_num] = {0};
+        int recv_data_size = recv(s, buf, ep90_size * point_num, 0);
+        now_tag = buf[7];
+        if (now_tag - last_tag == 1)
+            cout << "error tag!" << int(now_tag) << int(last_tag) << endl;
+        if (int(buf[0]) == -21 && int(buf[1]) == -112)
+        {
+                }
+        last_tag = now_tag;
+        herr_t status = myh5.extend_write_chunk(dim, buf);
         ret++;
-        cout << int(check_buf[0]) << " " << int(check_buf[1]) << endl;
+        cout << int(buf[0]) << " " << int(buf[1]) << endl;
 
-    } while (ret < 10);
+    } while (ret < 5);
 
-    // 3随时给服务端发消息
-
-    char buf[100] = {0};
+    // char bufw[100] = {0};
     cout << "输入任意字符结束。";
-    cin >> buf;
-    ret = send(s, buf, 100, 0);
+    // cin >> bufw;
+    // ret = send(s, bufw, 100, 0);
     // 4.关闭监听套接字
     closesocket(s);
 
-    //清理winsock2的环境
+    // 清理winsock2的环境
     WSACleanup();
 
     return 0;
