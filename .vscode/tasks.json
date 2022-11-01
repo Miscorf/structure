@@ -65,7 +65,10 @@
         "-g",
         "${file}",
         "-o",
-        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+        "${fileDirname}\\${fileBasenameNoExtension}.exe",
+        "-lwsock32",
+        "-I",
+        "${fileDirname}\\include",
         // "-I",
         // "C:\\Users\\tyler\\Desktop\\structure\\hdf5-1.12.2\\c++\\src"
         // "C:/Program Files/HDF_Group/HDF5/1.10.9/include/",
@@ -74,6 +77,12 @@
         // "-lhdf5",
         // "-lhdf5_cpp",
         // "-llibhdf5"
+        "-I",
+        "${fileDirname}\\HDF5\\include\\",
+        "-L",
+        "${fileDirname}\\HDF5\\lib\\vc14\\x64\\release",
+        "-lhdf5",
+        "-lhdf5_cpp"
       ],
       "options": {
         "cwd": "${fileDirname}"

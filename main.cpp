@@ -33,9 +33,9 @@ int main()
     // 2.链接服务器
     sockaddr_in addr;
     addr.sin_family = AF_INET;
-    addr.sin_port = htons(9000);
-    //  addr.sin_addr.s_addr = inet_addr("192.168.10.16");
-    addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    addr.sin_port = htons(24);
+    addr.sin_addr.s_addr = inet_addr("192.168.10.16");
+    // addr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
     int len = sizeof(sockaddr_in);
     if (connect(s, (SOCKADDR *)&addr, len) == SOCKET_ERROR)
@@ -51,7 +51,7 @@ int main()
     // 3接收服务端的消息
 
     // 获取两个ep90之间的间隔 ep90_size
-    int pack_max_size = 500;
+    int pack_max_size = 1500;
     char find_size_buf[pack_max_size] = {0};
     int recv_data_size = recv(s, find_size_buf, pack_max_size, 0);
     int ep90_size = EP90_size(find_size_buf, pack_max_size);
@@ -99,7 +99,7 @@ int main()
             cout << "error tag!" << int(now_tag) << int(last_tag) << endl;
         if (int(buf[0]) == -21 && int(buf[1]) == -112)
         {
-                }
+        }
         last_tag = now_tag;
         herr_t status = myh5.extend_write_chunk(dim, buf);
         ret++;
