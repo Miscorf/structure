@@ -1,0 +1,12 @@
+[
+{
+  "directory": "C:/Users/tyler/Desktop/structure/build",
+  "command": "C:\\mingw64\\bin\\g++.exe -IC:/Users/tyler/Desktop/structure/src -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include  -O0 -Wall -g -ggdb -o CMakeFiles\\st.dir\\main.cpp.obj -c C:\\Users\\tyler\\Desktop\\structure\\main.cpp",
+  "file": "C:\\Users\\tyler\\Desktop\\structure\\main.cpp"
+},
+{
+  "directory": "C:/Users/tyler/Desktop/structure/build",
+  "command": "C:\\mingw64\\bin\\g++.exe -IC:/Users/tyler/Desktop/structure/src -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include  -O0 -Wall -g -ggdb -o CMakeFiles\\test.dir\\test.cpp.obj -c C:\\Users\\tyler\\Desktop\\structure\\test.cpp",
+  "file": "C:\\Users\\tyler\\Desktop\\structure\\test.cpp"
+}
+]

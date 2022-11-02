@@ -44,7 +44,7 @@ int EP90_size(char c[], int len)
 void ofstr(char c[], int len)
 {
     ofstream ofs;
-    ofs.open("text.txt", ios::out | ios::app);
+    // ofs.open("text.txt", ios::out | ios::app);
     for (size_t i = 0; i < len; i++)
     {
         break;

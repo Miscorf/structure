@@ -4,7 +4,8 @@
     {
       "type": "shell",
       "label": "g++.exe build active file",
-      "command": "C:\\mingw-w64\\mingw64\\bin\\g++.exe",
+      "command": "C:\\mingw64\\bin\\g++.exe",
+      // "command": "C:\\MinGW\\bin\\g++.exe",
       "args": [
         "-g",
         "${file}",
@@ -43,56 +44,19 @@
         // "-llibz_D"
 
         //HDF5
-        "-I",
-        "${fileDirname}\\HDF5\\include\\",
-        "-L",
-        "${fileDirname}\\HDF5\\lib\\vc14\\x64\\release",
-        "-lhdf5",
-        "-lhdf5_cpp"
+        // "-I",
+        // "${fileDirname}\\HDF5\\include\\",
+        // "-L",
+        // "${fileDirname}\\HDF5\\lib\\vc14\\x64\\release",
+        // "-lhdf5",
+        // "-lhdf5_cpp"
       ],
       "options": {
-        "cwd": "C:\\mingw-w64\\mingw64\\bin\\"
+        // "cwd": "C:\\mingw-w64\\mingw64\\bin\\"
+        "cwd": "C:\\mingw64\\bin\\"
       },
       "problemMatcher": ["$gcc"],
       "group": "build"
-    },
-    {
-      "type": "cppbuild",
-      "label": "Build",
-      "command": "C:\\mingw-w64\\mingw64\\bin\\g++.exe",
-      "args": [
-        "-fdiagnostics-color=always",
-        "-g",
-        "${file}",
-        "-o",
-        "${fileDirname}\\${fileBasenameNoExtension}.exe",
-        "-lwsock32",
-        "-I",
-        "${fileDirname}\\include",
-        // "-I",
-        // "C:\\Users\\tyler\\Desktop\\structure\\hdf5-1.12.2\\c++\\src"
-        // "C:/Program Files/HDF_Group/HDF5/1.10.9/include/",
-        // "-L",
-        // "C:/Program Files/HDF_Group/HDF5/1.10.9/lib/",
-        // "-lhdf5",
-        // "-lhdf5_cpp",
-        // "-llibhdf5"
-        "-I",
-        "${fileDirname}\\HDF5\\include\\",
-        "-L",
-        "${fileDirname}\\HDF5\\lib\\vc14\\x64\\release",
-        "-lhdf5",
-        "-lhdf5_cpp"
-      ],
-      "options": {
-        "cwd": "${fileDirname}"
-      },
-      "problemMatcher": ["$gcc"],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "detail": "调试器生成的任务。"
     }
   ]
 }

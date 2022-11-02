@@ -1,6 +1,6 @@
 {
   "C_Cpp_Runner.msvcBatchPath": "",
-  "C_Cpp_Runner.cCompilerPath": "C:/mingw-w64/mingw64/bin/gcc.exe",
+  "C_Cpp_Runner.cCompilerPath": "C:/mingw64/bin/gcc.exe",
   "C_Cpp_Runner.cppCompilerPath": "g++",
   "C_Cpp_Runner.debuggerPath": "gdb",
   "C_Cpp_Runner.cStandard": "",
