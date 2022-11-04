@@ -1,9 +1,9 @@
 #include "utils.h"
 #include <vector>
-#include "src/class/HF5.cpp"
 #include <stdint.h>
 #include <hdf5.h>
 #include <H5Cpp.h>
+#include "HF5.h"
 using namespace std;
 int main2()
 {
@@ -27,6 +27,9 @@ void dsptime(const struct tm *); //输出时间。
 
 int main(void)
 {
+    int a = -112;
+    printf("%X", a);
+    cout << endl;
     time_t nowtime;
     nowtime = time(NULL);    //获取日历时间
     cout << nowtime << endl; //输出nowtime

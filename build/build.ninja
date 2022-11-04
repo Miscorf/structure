@@ -11,8 +11,8 @@
 # =============================================================================
 
 # =============================================================================
-# Project: structure
-# Configurations: Debug
+# Project: demo
+# Configurations: Release
 # =============================================================================
 
 #############################################
@@ -24,7 +24,7 @@ ninja_required_version = 1.5
 #############################################
 # Set configuration variable for custom commands.
 
-CONFIGURATION = Debug
+CONFIGURATION = Release
 # =============================================================================
 # Include auxiliary files.
 
@@ -41,6 +41,83 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/tyler/Desktop/structure/build/
 # =============================================================================
+# Object build statements for SHARED_LIBRARY target include
+
+
+#############################################
+# Order-only phony target for include
+
+build cmake_object_order_depends_target_include: phony || CMakeFiles/include.dir
+
+build CMakeFiles/include.dir/src/HF5.cpp.obj: CXX_COMPILER__include_Release C$:/Users/tyler/Desktop/structure/src/HF5.cpp || cmake_object_order_depends_target_include
+  DEFINES = -Dinclude_EXPORTS
+  DEP_FILE = CMakeFiles\include.dir\src\HF5.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG
+  INCLUDES = -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include
+  OBJECT_DIR = CMakeFiles\include.dir
+  OBJECT_FILE_DIR = CMakeFiles\include.dir\src
+
+build CMakeFiles/include.dir/src/Store_h5.cpp.obj: CXX_COMPILER__include_Release C$:/Users/tyler/Desktop/structure/src/Store_h5.cpp || cmake_object_order_depends_target_include
+  DEFINES = -Dinclude_EXPORTS
+  DEP_FILE = CMakeFiles\include.dir\src\Store_h5.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG
+  INCLUDES = -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include
+  OBJECT_DIR = CMakeFiles\include.dir
+  OBJECT_FILE_DIR = CMakeFiles\include.dir\src
+
+build CMakeFiles/include.dir/src/UDP_control.cpp.obj: CXX_COMPILER__include_Release C$:/Users/tyler/Desktop/structure/src/UDP_control.cpp || cmake_object_order_depends_target_include
+  DEFINES = -Dinclude_EXPORTS
+  DEP_FILE = CMakeFiles\include.dir\src\UDP_control.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG
+  INCLUDES = -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include
+  OBJECT_DIR = CMakeFiles\include.dir
+  OBJECT_FILE_DIR = CMakeFiles\include.dir\src
+
+build CMakeFiles/include.dir/src/Unpack.cpp.obj: CXX_COMPILER__include_Release C$:/Users/tyler/Desktop/structure/src/Unpack.cpp || cmake_object_order_depends_target_include
+  DEFINES = -Dinclude_EXPORTS
+  DEP_FILE = CMakeFiles\include.dir\src\Unpack.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG
+  INCLUDES = -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include
+  OBJECT_DIR = CMakeFiles\include.dir
+  OBJECT_FILE_DIR = CMakeFiles\include.dir\src
+
+build CMakeFiles/include.dir/src/main.cpp.obj: CXX_COMPILER__include_Release C$:/Users/tyler/Desktop/structure/src/main.cpp || cmake_object_order_depends_target_include
+  DEFINES = -Dinclude_EXPORTS
+  DEP_FILE = CMakeFiles\include.dir\src\main.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG
+  INCLUDES = -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include
+  OBJECT_DIR = CMakeFiles\include.dir
+  OBJECT_FILE_DIR = CMakeFiles\include.dir\src
+
+build CMakeFiles/include.dir/src/utils.cpp.obj: CXX_COMPILER__include_Release C$:/Users/tyler/Desktop/structure/src/utils.cpp || cmake_object_order_depends_target_include
+  DEFINES = -Dinclude_EXPORTS
+  DEP_FILE = CMakeFiles\include.dir\src\utils.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG
+  INCLUDES = -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include
+  OBJECT_DIR = CMakeFiles\include.dir
+  OBJECT_FILE_DIR = CMakeFiles\include.dir\src
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target include
+
+
+#############################################
+# Link the shared library C:\Users\tyler\Desktop\structure\bin\stapi.dll
+
+build C$:/Users/tyler/Desktop/structure/bin/stapi.dll C$:/Users/tyler/Desktop/structure/bin/libstapi.dll.a: CXX_SHARED_LIBRARY_LINKER__include_Release CMakeFiles/include.dir/src/HF5.cpp.obj CMakeFiles/include.dir/src/Store_h5.cpp.obj CMakeFiles/include.dir/src/UDP_control.cpp.obj CMakeFiles/include.dir/src/Unpack.cpp.obj CMakeFiles/include.dir/src/main.cpp.obj CMakeFiles/include.dir/src/utils.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -O3 -DNDEBUG
+  LINK_LIBRARIES = -lhdf5  -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_PATH = -LC:/Users/tyler/Desktop/structure/HDF5/lib/vc14/x64/release
+  OBJECT_DIR = CMakeFiles\include.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  RESTAT = 1
+  TARGET_FILE = C:\Users\tyler\Desktop\structure\bin\stapi.dll
+  TARGET_IMPLIB = C:\Users\tyler\Desktop\structure\bin\libstapi.dll.a
+  TARGET_PDB = stapi.dll.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target st
 
 
@@ -49,12 +126,12 @@ cmake_ninja_workdir = C$:/Users/tyler/Desktop/structure/build/
 
 build cmake_object_order_depends_target_st: phony || CMakeFiles/st.dir
 
-build CMakeFiles/st.dir/main.cpp.obj: CXX_COMPILER__st_Debug C$:/Users/tyler/Desktop/structure/main.cpp || cmake_object_order_depends_target_st
-  DEP_FILE = CMakeFiles\st.dir\main.cpp.obj.d
-  FLAGS = -O0 -Wall -g -ggdb
-  INCLUDES = -IC:/Users/tyler/Desktop/structure/src -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include
+build CMakeFiles/st.dir/src/main.cpp.obj: CXX_COMPILER__st_Release C$:/Users/tyler/Desktop/structure/src/main.cpp || cmake_object_order_depends_target_st
+  DEP_FILE = CMakeFiles\st.dir\src\main.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG
+  INCLUDES = -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include
   OBJECT_DIR = CMakeFiles\st.dir
-  OBJECT_FILE_DIR = CMakeFiles\st.dir
+  OBJECT_FILE_DIR = CMakeFiles\st.dir\src
 
 
 # =============================================================================
@@ -62,53 +139,18 @@ build CMakeFiles/st.dir/main.cpp.obj: CXX_COMPILER__st_Debug C$:/Users/tyler/Des
 
 
 #############################################
-# Link the executable st.exe
+# Link the executable C:\Users\tyler\Desktop\structure\bin\st.exe
 
-build st.exe: CXX_EXECUTABLE_LINKER__st_Debug CMakeFiles/st.dir/main.cpp.obj
-  FLAGS = -O0 -Wall -g -ggdb
-  LINK_LIBRARIES = -lws2_32  -lhdf5  -lhdf5_cpp  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+build C$:/Users/tyler/Desktop/structure/bin/st.exe: CXX_EXECUTABLE_LINKER__st_Release CMakeFiles/st.dir/src/main.cpp.obj | C$:/Users/tyler/Desktop/structure/bin/stapi.dll C$:/Users/tyler/Desktop/structure/bin/stapi.dll
+  FLAGS = -O3 -DNDEBUG
+  LINK_LIBRARIES = -lhdf5  -lws2_32  C:/Users/tyler/Desktop/structure/bin/stapi.dll  -lhdf5  -lws2_32  C:/Users/tyler/Desktop/structure/bin/stapi.dll  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LC:/Users/tyler/Desktop/structure/HDF5/lib/vc14/x64/release
   OBJECT_DIR = CMakeFiles\st.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = st.exe
-  TARGET_IMPLIB = libst.dll.a
+  TARGET_FILE = C:\Users\tyler\Desktop\structure\bin\st.exe
+  TARGET_IMPLIB = C:\Users\tyler\Desktop\structure\bin\libst.dll.a
   TARGET_PDB = st.exe.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target test
-
-
-#############################################
-# Order-only phony target for test
-
-build cmake_object_order_depends_target_test: phony || CMakeFiles/test.dir
-
-build CMakeFiles/test.dir/test.cpp.obj: CXX_COMPILER__test_Debug C$:/Users/tyler/Desktop/structure/test.cpp || cmake_object_order_depends_target_test
-  DEP_FILE = CMakeFiles\test.dir\test.cpp.obj.d
-  FLAGS = -O0 -Wall -g -ggdb
-  INCLUDES = -IC:/Users/tyler/Desktop/structure/src -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include
-  OBJECT_DIR = CMakeFiles\test.dir
-  OBJECT_FILE_DIR = CMakeFiles\test.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target test
-
-
-#############################################
-# Link the executable test.exe
-
-build test.exe: CXX_EXECUTABLE_LINKER__test_Debug CMakeFiles/test.dir/test.cpp.obj
-  FLAGS = -O0 -Wall -g -ggdb
-  LINK_LIBRARIES = -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  LINK_PATH = -LC:/Users/tyler/Desktop/structure/HDF5/lib/vc14/x64/release
-  OBJECT_DIR = CMakeFiles\test.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = test.exe
-  TARGET_IMPLIB = libtest.dll.a
-  TARGET_PDB = test.exe.dbg
 
 
 #############################################
@@ -134,12 +176,58 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cmd.exe /C "cd /D C:\Users\tyler\Desktop\structure\build && "C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cmd.exe /C "cd /D C:\Users\tyler\Desktop\structure\build && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cmd.exe /C "cd /D C:\Users\tyler\Desktop\structure\build && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
 # =============================================================================
 # Target aliases.
 
-build st: phony st.exe
+build include: phony C$:/Users/tyler/Desktop/structure/bin/stapi.dll
 
-build test: phony test.exe
+build st: phony C$:/Users/tyler/Desktop/structure/bin/st.exe
+
+build st.exe: phony C$:/Users/tyler/Desktop/structure/bin/st.exe
+
+build stapi.dll: phony C$:/Users/tyler/Desktop/structure/bin/stapi.dll
 
 # =============================================================================
 # Folder targets.
@@ -149,7 +237,7 @@ build test: phony test.exe
 #############################################
 # Folder: C:/Users/tyler/Desktop/structure/build
 
-build all: phony st.exe test.exe
+build all: phony C$:/Users/tyler/Desktop/structure/bin/stapi.dll C$:/Users/tyler/Desktop/structure/bin/st.exe
 
 # =============================================================================
 # Built-in targets

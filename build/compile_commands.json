@@ -1,12 +1,37 @@
 [
 {
   "directory": "C:/Users/tyler/Desktop/structure/build",
-  "command": "C:\\mingw64\\bin\\g++.exe -IC:/Users/tyler/Desktop/structure/src -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include  -O0 -Wall -g -ggdb -o CMakeFiles\\st.dir\\main.cpp.obj -c C:\\Users\\tyler\\Desktop\\structure\\main.cpp",
-  "file": "C:\\Users\\tyler\\Desktop\\structure\\main.cpp"
+  "command": "C:\\mingw64\\bin\\g++.exe -Dinclude_EXPORTS -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include -O3 -DNDEBUG -o CMakeFiles\\include.dir\\src\\HF5.cpp.obj -c C:\\Users\\tyler\\Desktop\\structure\\src\\HF5.cpp",
+  "file": "C:\\Users\\tyler\\Desktop\\structure\\src\\HF5.cpp"
 },
 {
   "directory": "C:/Users/tyler/Desktop/structure/build",
-  "command": "C:\\mingw64\\bin\\g++.exe -IC:/Users/tyler/Desktop/structure/src -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include  -O0 -Wall -g -ggdb -o CMakeFiles\\test.dir\\test.cpp.obj -c C:\\Users\\tyler\\Desktop\\structure\\test.cpp",
-  "file": "C:\\Users\\tyler\\Desktop\\structure\\test.cpp"
+  "command": "C:\\mingw64\\bin\\g++.exe -Dinclude_EXPORTS -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include -O3 -DNDEBUG -o CMakeFiles\\include.dir\\src\\Store_h5.cpp.obj -c C:\\Users\\tyler\\Desktop\\structure\\src\\Store_h5.cpp",
+  "file": "C:\\Users\\tyler\\Desktop\\structure\\src\\Store_h5.cpp"
+},
+{
+  "directory": "C:/Users/tyler/Desktop/structure/build",
+  "command": "C:\\mingw64\\bin\\g++.exe -Dinclude_EXPORTS -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include -O3 -DNDEBUG -o CMakeFiles\\include.dir\\src\\UDP_control.cpp.obj -c C:\\Users\\tyler\\Desktop\\structure\\src\\UDP_control.cpp",
+  "file": "C:\\Users\\tyler\\Desktop\\structure\\src\\UDP_control.cpp"
+},
+{
+  "directory": "C:/Users/tyler/Desktop/structure/build",
+  "command": "C:\\mingw64\\bin\\g++.exe -Dinclude_EXPORTS -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include -O3 -DNDEBUG -o CMakeFiles\\include.dir\\src\\Unpack.cpp.obj -c C:\\Users\\tyler\\Desktop\\structure\\src\\Unpack.cpp",
+  "file": "C:\\Users\\tyler\\Desktop\\structure\\src\\Unpack.cpp"
+},
+{
+  "directory": "C:/Users/tyler/Desktop/structure/build",
+  "command": "C:\\mingw64\\bin\\g++.exe -Dinclude_EXPORTS -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include -O3 -DNDEBUG -o CMakeFiles\\include.dir\\src\\main.cpp.obj -c C:\\Users\\tyler\\Desktop\\structure\\src\\main.cpp",
+  "file": "C:\\Users\\tyler\\Desktop\\structure\\src\\main.cpp"
+},
+{
+  "directory": "C:/Users/tyler/Desktop/structure/build",
+  "command": "C:\\mingw64\\bin\\g++.exe -Dinclude_EXPORTS -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include -O3 -DNDEBUG -o CMakeFiles\\include.dir\\src\\utils.cpp.obj -c C:\\Users\\tyler\\Desktop\\structure\\src\\utils.cpp",
+  "file": "C:\\Users\\tyler\\Desktop\\structure\\src\\utils.cpp"
+},
+{
+  "directory": "C:/Users/tyler/Desktop/structure/build",
+  "command": "C:\\mingw64\\bin\\g++.exe -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include -O3 -DNDEBUG -o CMakeFiles\\st.dir\\src\\main.cpp.obj -c C:\\Users\\tyler\\Desktop\\structure\\src\\main.cpp",
+  "file": "C:\\Users\\tyler\\Desktop\\structure\\src\\main.cpp"
 }
 ]

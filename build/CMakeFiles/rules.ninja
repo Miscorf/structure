@@ -6,15 +6,15 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: structure
-# Configurations: Debug
+# Project: demo
+# Configurations: Release
 # =============================================================================
 # =============================================================================
 
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__st_Debug
+rule CXX_COMPILER__include_Release
   depfile = $DEP_FILE
   deps = gcc
   command = C:\mingw64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -22,18 +22,18 @@ rule CXX_COMPILER__st_Debug
 
 
 #############################################
-# Rule for linking CXX executable.
+# Rule for linking CXX shared library.
 
-rule CXX_EXECUTABLE_LINKER__st_Debug
-  command = cmd.exe /C "$PRE_LINK && C:\mingw64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
-  description = Linking CXX executable $TARGET_FILE
+rule CXX_SHARED_LIBRARY_LINKER__include_Release
+  command = cmd.exe /C "$PRE_LINK && C:\mingw64\bin\g++.exe $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  description = Linking CXX shared library $TARGET_FILE
   restat = $RESTAT
 
 
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__test_Debug
+rule CXX_COMPILER__st_Release
   depfile = $DEP_FILE
   deps = gcc
   command = C:\mingw64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -43,7 +43,7 @@ rule CXX_COMPILER__test_Debug
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__test_Debug
+rule CXX_EXECUTABLE_LINKER__st_Release
   command = cmd.exe /C "$PRE_LINK && C:\mingw64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT

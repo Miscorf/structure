@@ -1,6 +1,6 @@
 #include <winsock2.h> //winsock2的头文件
 #include <iostream>
-#include <fstream>
+#include "utils.h"
 using namespace std;
 
 // 查找eb90所在char中的位置，-1代表没找到
@@ -43,12 +43,4 @@ int EP90_size(char c[], int len)
 
 void ofstr(char c[], int len)
 {
-    ofstream ofs;
-    // ofs.open("text.txt", ios::out | ios::app);
-    for (size_t i = 0; i < len; i++)
-    {
-        break;
-    }
-    ofs << hex << c << endl;
-    ofs.close();
 }

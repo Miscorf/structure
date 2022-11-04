@@ -1,30 +1,30 @@
-// #include <hdf5.h>
-// #include <iostream>
-// #include <string>
+#ifndef _HF5_FILE
+#define _HF5_FILE
 
-// using namespace std;
-// class HF5
-// {
-// private:
-//     hid_t hf5_file; /* handles */
-//     hid_t dataspace, dataset;
-//     hid_t filespace, memspace;
-//     hid_t prop;
+#include <hdf5.h>
+#define RANK 2
+class HF5
+{
+private:
+    hid_t file; /* handles */
+    hid_t dataspace, dataset;
+    hid_t filespace, memspace;
+    hid_t prop;
 
-//     hsize_t dims[2]; // 维度
-//     hsize_t maxdims[2] = {H5S_UNLIMITED, H5S_UNLIMITED};
-//     herr_t status;
-//     // hsize_t chunk_dims[2] = {1, 3};
-//     hsize_t chunk_dims[2];       // 块维度
-//     int data[3][3] = {{1, 1, 1}, /* data to write */
-//                       {1, 1, 1},
-//                       {1, 1, 1}};
+    hsize_t dims[2] = {0, 0}; // = {0, 3}; // group 维度
+    hsize_t maxdims[2] = {H5S_UNLIMITED, H5S_UNLIMITED};
+    herr_t status;
+    // hsize_t chunk_dims[2] = {1, 3};
+    hsize_t chunk_dims[2];        // 块 维度
+    int data[1][3] = {{1, 1, 1}}; /* data to write */
 
-// public:
-//     HF5();
-//     HF5(const string &_name);
-//     HF5(const string &_name, const int &_age);
+public:
+    HF5(char *file_name, char *dataset_name, hsize_t _chunk_dims[], int time_flag);
+    void get_dims(hsize_t *buf);
+    herr_t extend_write_chunk(hsize_t dimsext[], void *dataext);
 
-// public:
-//     ~HF5();
-// };
+public:
+    ~HF5();
+};
+
+#endif
