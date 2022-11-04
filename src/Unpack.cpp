@@ -15,7 +15,7 @@ boolean Unpack::check_next_pluse()
     std::cout << int(check_buf[0]) << " " << int(check_buf[1]) << std::endl;
     int ret = 0;
     std::cout << "pluse_size:" << pluse_size << std::endl;
-    if (int(check_buf[0]) == -21 && int(check_buf[0]) == -112)
+    if (int(check_buf[0]) == -21 && int(check_buf[1]) == -112)
     {
         return true;
     }

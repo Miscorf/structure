@@ -1,5 +1,7 @@
 #include "HF5.h"
-
+HF5 ::HF5()
+{
+}
 HF5::HF5(char *file_name, char *dataset_name, hsize_t _chunk_dims[], int time_flag)
 {
     hsize_t size[2];
@@ -57,8 +59,7 @@ herr_t HF5::extend_write_chunk(hsize_t dimsext[], void *dataext)
                       H5P_DEFAULT, dataext);
     return status;
 }
-
-HF5::~HF5()
+herr_t HF5::close()
 {
     status = H5Dclose(dataset);
     status = H5Pclose(prop);
@@ -66,4 +67,9 @@ HF5::~HF5()
     status = H5Sclose(memspace);
     status = H5Sclose(filespace);
     status = H5Fclose(file);
+    return status;
+}
+
+HF5::~HF5()
+{
 }

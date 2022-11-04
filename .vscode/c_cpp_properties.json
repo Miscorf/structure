@@ -3,10 +3,10 @@
         {
             "name": "windows-gcc-x64",
             "includePath": [
-                "${workspaceFolder}/**",
+                "${workspaceFolder}/",
                 "${workspaceFolder}/include/",
-                "${workspaceFolder}/HDF5/include/",
-                "C:\\Users\\tyler\\Desktop\\structure\\include"
+                "${workspaceFolder}/HDF5/include/c",
+                "${workspaceFolder}/HDF5/include"
             ],
             "defines": [
                 "_DEBUG",
@@ -17,8 +17,8 @@
             "cStandard": "${default}",
             "cppStandard": "${default}",
             "intelliSenseMode": "windows-gcc-x64",
-            "configurationProvider": "ms-vscode.cmake-tools",
-            "compileCommands": "C:/Users/tyler/Desktop/structure/build/compile_commands.json"
+            // "configurationProvider": "ms-vscode.cmake-tools",
+            // "compileCommands": "C:/Users/tyler/Desktop/structure/build/compile_commands.json"
         }
     ],
     "version": 4
