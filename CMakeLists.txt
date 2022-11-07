@@ -34,10 +34,10 @@ SET_TARGET_PROPERTIES(include PROPERTIES LINKER_LANGUAGE CXX
         PREFIX "")
 
 add_executable(st src/main.cpp ${INCLUDES})
-add_executable(tst src/test.cpp ${INCLUDES})
 TARGET_LINK_LIBRARIES(st ${LINK_LIBS})
 TARGET_LINK_LIBRARIES(st ${CMAKE_CURRENT_SOURCE_DIR}/bin/uDASAPI.dll)
 target_link_libraries(st hdf5.lib)
 
+add_executable(tst src/test.cpp)
 target_link_libraries(tst hdf5.lib)
 TARGET_LINK_LIBRARIES(tst ${CMAKE_CURRENT_SOURCE_DIR}/bin/uDASAPI.dll)

@@ -42,7 +42,7 @@ void test_4_8_to_32()
     __int32 data_u32 = (d1 << 24) | (d2 << 16) | (d3 << 8) | d4;
     cout << "d:" << d1 << "d:" << d2 << "d:" << data_u32 << endl;
 }
-int main1(void)
+int main(void)
 {
     test_4_8_to_32();
     // int a = -112;

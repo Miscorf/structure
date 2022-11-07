@@ -10,7 +10,7 @@ using namespace std;
 //勿忘，链接dll的lib
 // #pragma comment(lib, "ws2_32.lib")
 
-int main()
+int main1()
 {
     //生产环境
     // char *ip = "198.162.10.16";

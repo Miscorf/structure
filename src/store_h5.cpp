@@ -38,7 +38,7 @@ boolean Store_h5::do_store(int store_num)
         }
 
         ret++;
-    } while (after_time - begin_time < 5);
+    } while (after_time - begin_time < 3);
 
     hf5.close();
 }
