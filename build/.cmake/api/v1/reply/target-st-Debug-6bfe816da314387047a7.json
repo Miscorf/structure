@@ -2,13 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "C:/Users/tyler/Desktop/structure/bin/uDASAPI.dll"
+			"path" : "C:/Users/tyler/Desktop/structure/bin/st.exe"
 		},
 		{
-			"path" : "C:/Users/tyler/Desktop/structure/bin/libuDASAPI.dll.a"
-		},
-		{
-			"path" : "C:/Users/tyler/Desktop/structure/bin/uDASAPI.pdb"
+			"path" : "C:/Users/tyler/Desktop/structure/bin/st.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -16,8 +13,7 @@
 	{
 		"commands" : 
 		[
-			"ADD_LIBRARY",
-			"INSTALL",
+			"add_executable",
 			"link_directories",
 			"TARGET_LINK_LIBRARIES",
 			"include_directories"
@@ -34,41 +30,41 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 24,
+				"line" : 36,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 26,
+				"line" : 11,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 11,
+				"line" : 38,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 39,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 25,
-				"parent" : 0
-			},
-			{
-				"command" : 4,
-				"file" : 0,
 				"line" : 6,
 				"parent" : 0
 			},
 			{
-				"command" : 4,
+				"command" : 3,
 				"file" : 0,
 				"line" : 7,
 				"parent" : 0
 			},
 			{
-				"command" : 4,
+				"command" : 3,
 				"file" : 0,
 				"line" : 8,
 				"parent" : 0
@@ -82,12 +78,6 @@
 			[
 				{
 					"fragment" : "-g"
-				}
-			],
-			"defines" : 
-			[
-				{
-					"define" : "include_EXPORTS"
 				}
 			],
 			"includes" : 
@@ -108,56 +98,56 @@
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
-				0,
-				1,
-				2,
-				3,
-				4,
-				5,
-				6
+				0
 			]
 		}
 	],
-	"id" : "include::@6890427a1f51a3e7e1df",
-	"install" : 
-	{
-		"destinations" : 
-		[
-			{
-				"backtrace" : 2,
-				"path" : "C:/Users/tyler/Desktop/structure/lib"
-			},
-			{
-				"backtrace" : 2,
-				"path" : "C:/Users/tyler/Desktop/structure/lib"
-			}
-		],
-		"prefix" : 
-		{
-			"path" : "C:/Program Files (x86)/demo"
-		}
-	},
+	"id" : "st::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
 			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
 				"fragment" : "",
 				"role" : "flags"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "-LC:\\Users\\tyler\\Desktop\\structure\\HDF5\\lib\\vc14\\x64\\release",
 				"role" : "libraryPath"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "-lhdf5",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 3,
 				"fragment" : "-lws2_32",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "C:\\Users\\tyler\\Desktop\\structure\\bin\\uDASAPI.dll",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-lhdf5",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-lws2_32",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "C:\\Users\\tyler\\Desktop\\structure\\bin\\uDASAPI.dll",
 				"role" : "libraries"
 			},
 			{
@@ -167,8 +157,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "include",
-	"nameOnDisk" : "uDASAPI.dll",
+	"name" : "st",
+	"nameOnDisk" : "st.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -180,13 +170,7 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0,
-				1,
-				2,
-				3,
-				4,
-				5,
-				6
+				0
 			]
 		}
 	],
@@ -195,45 +179,9 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/HF5.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/Store_h5.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/UDP_control.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/Unpack.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
 			"path" : "src/main.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/test.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/utils.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "SHARED_LIBRARY"
+	"type" : "EXECUTABLE"
 }

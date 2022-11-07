@@ -21,6 +21,11 @@
 },
 {
   "directory": "C:/Users/tyler/Desktop/structure/build",
+  "command": "C:\\mingw64\\bin\\g++.exe -Dinclude_EXPORTS -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include -IC:/Users/tyler/Desktop/structure/HDF5/include/c -g -o CMakeFiles\\include.dir\\src\\das_data.cpp.obj -c C:\\Users\\tyler\\Desktop\\structure\\src\\das_data.cpp",
+  "file": "C:\\Users\\tyler\\Desktop\\structure\\src\\das_data.cpp"
+},
+{
+  "directory": "C:/Users/tyler/Desktop/structure/build",
   "command": "C:\\mingw64\\bin\\g++.exe -Dinclude_EXPORTS -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include -IC:/Users/tyler/Desktop/structure/HDF5/include/c -g -o CMakeFiles\\include.dir\\src\\main.cpp.obj -c C:\\Users\\tyler\\Desktop\\structure\\src\\main.cpp",
   "file": "C:\\Users\\tyler\\Desktop\\structure\\src\\main.cpp"
 },
@@ -38,5 +43,10 @@
   "directory": "C:/Users/tyler/Desktop/structure/build",
   "command": "C:\\mingw64\\bin\\g++.exe -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include -IC:/Users/tyler/Desktop/structure/HDF5/include/c -g -o CMakeFiles\\st.dir\\src\\main.cpp.obj -c C:\\Users\\tyler\\Desktop\\structure\\src\\main.cpp",
   "file": "C:\\Users\\tyler\\Desktop\\structure\\src\\main.cpp"
+},
+{
+  "directory": "C:/Users/tyler/Desktop/structure/build",
+  "command": "C:\\mingw64\\bin\\g++.exe -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include -IC:/Users/tyler/Desktop/structure/HDF5/include/c -g -o CMakeFiles\\tst.dir\\src\\test.cpp.obj -c C:\\Users\\tyler\\Desktop\\structure\\src\\test.cpp",
+  "file": "C:\\Users\\tyler\\Desktop\\structure\\src\\test.cpp"
 }
 ]

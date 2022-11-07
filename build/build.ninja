@@ -81,6 +81,14 @@ build CMakeFiles/include.dir/src/Unpack.cpp.obj: CXX_COMPILER__include_Debug C$:
   OBJECT_DIR = CMakeFiles\include.dir
   OBJECT_FILE_DIR = CMakeFiles\include.dir\src
 
+build CMakeFiles/include.dir/src/das_data.cpp.obj: CXX_COMPILER__include_Debug C$:/Users/tyler/Desktop/structure/src/das_data.cpp || cmake_object_order_depends_target_include
+  DEFINES = -Dinclude_EXPORTS
+  DEP_FILE = CMakeFiles\include.dir\src\das_data.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include -IC:/Users/tyler/Desktop/structure/HDF5/include/c
+  OBJECT_DIR = CMakeFiles\include.dir
+  OBJECT_FILE_DIR = CMakeFiles\include.dir\src
+
 build CMakeFiles/include.dir/src/main.cpp.obj: CXX_COMPILER__include_Debug C$:/Users/tyler/Desktop/structure/src/main.cpp || cmake_object_order_depends_target_include
   DEFINES = -Dinclude_EXPORTS
   DEP_FILE = CMakeFiles\include.dir\src\main.cpp.obj.d
@@ -113,7 +121,7 @@ build CMakeFiles/include.dir/src/utils.cpp.obj: CXX_COMPILER__include_Debug C$:/
 #############################################
 # Link the shared library C:\Users\tyler\Desktop\structure\bin\uDASAPI.dll
 
-build C$:/Users/tyler/Desktop/structure/bin/uDASAPI.dll C$:/Users/tyler/Desktop/structure/bin/libuDASAPI.dll.a: CXX_SHARED_LIBRARY_LINKER__include_Debug CMakeFiles/include.dir/src/HF5.cpp.obj CMakeFiles/include.dir/src/Store_h5.cpp.obj CMakeFiles/include.dir/src/UDP_control.cpp.obj CMakeFiles/include.dir/src/Unpack.cpp.obj CMakeFiles/include.dir/src/main.cpp.obj CMakeFiles/include.dir/src/test.cpp.obj CMakeFiles/include.dir/src/utils.cpp.obj
+build C$:/Users/tyler/Desktop/structure/bin/uDASAPI.dll C$:/Users/tyler/Desktop/structure/bin/libuDASAPI.dll.a: CXX_SHARED_LIBRARY_LINKER__include_Debug CMakeFiles/include.dir/src/HF5.cpp.obj CMakeFiles/include.dir/src/Store_h5.cpp.obj CMakeFiles/include.dir/src/UDP_control.cpp.obj CMakeFiles/include.dir/src/Unpack.cpp.obj CMakeFiles/include.dir/src/das_data.cpp.obj CMakeFiles/include.dir/src/main.cpp.obj CMakeFiles/include.dir/src/test.cpp.obj CMakeFiles/include.dir/src/utils.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -g
   LINK_LIBRARIES = -lhdf5  -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LC:/Users/tyler/Desktop/structure/HDF5/lib/vc14/x64/release
@@ -159,6 +167,41 @@ build C$:/Users/tyler/Desktop/structure/bin/st.exe: CXX_EXECUTABLE_LINKER__st_De
   TARGET_FILE = C:\Users\tyler\Desktop\structure\bin\st.exe
   TARGET_IMPLIB = C:\Users\tyler\Desktop\structure\bin\libst.dll.a
   TARGET_PDB = st.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target tst
+
+
+#############################################
+# Order-only phony target for tst
+
+build cmake_object_order_depends_target_tst: phony || CMakeFiles/tst.dir
+
+build CMakeFiles/tst.dir/src/test.cpp.obj: CXX_COMPILER__tst_Debug C$:/Users/tyler/Desktop/structure/src/test.cpp || cmake_object_order_depends_target_tst
+  DEP_FILE = CMakeFiles\tst.dir\src\test.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include -IC:/Users/tyler/Desktop/structure/HDF5/include/c
+  OBJECT_DIR = CMakeFiles\tst.dir
+  OBJECT_FILE_DIR = CMakeFiles\tst.dir\src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target tst
+
+
+#############################################
+# Link the executable C:\Users\tyler\Desktop\structure\bin\tst.exe
+
+build C$:/Users/tyler/Desktop/structure/bin/tst.exe: CXX_EXECUTABLE_LINKER__tst_Debug CMakeFiles/tst.dir/src/test.cpp.obj | C$:/Users/tyler/Desktop/structure/bin/uDASAPI.dll
+  FLAGS = -g
+  LINK_LIBRARIES = -lhdf5  C:/Users/tyler/Desktop/structure/bin/uDASAPI.dll  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_PATH = -LC:/Users/tyler/Desktop/structure/HDF5/lib/vc14/x64/release
+  OBJECT_DIR = CMakeFiles\tst.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = C:\Users\tyler\Desktop\structure\bin\tst.exe
+  TARGET_IMPLIB = C:\Users\tyler\Desktop\structure\bin\libtst.dll.a
+  TARGET_PDB = tst.exe.dbg
 
 
 #############################################
@@ -235,6 +278,10 @@ build st: phony C$:/Users/tyler/Desktop/structure/bin/st.exe
 
 build st.exe: phony C$:/Users/tyler/Desktop/structure/bin/st.exe
 
+build tst: phony C$:/Users/tyler/Desktop/structure/bin/tst.exe
+
+build tst.exe: phony C$:/Users/tyler/Desktop/structure/bin/tst.exe
+
 build uDASAPI.dll: phony C$:/Users/tyler/Desktop/structure/bin/uDASAPI.dll
 
 # =============================================================================
@@ -245,7 +292,7 @@ build uDASAPI.dll: phony C$:/Users/tyler/Desktop/structure/bin/uDASAPI.dll
 #############################################
 # Folder: C:/Users/tyler/Desktop/structure/build
 
-build all: phony C$:/Users/tyler/Desktop/structure/bin/uDASAPI.dll C$:/Users/tyler/Desktop/structure/bin/st.exe
+build all: phony C$:/Users/tyler/Desktop/structure/bin/uDASAPI.dll C$:/Users/tyler/Desktop/structure/bin/st.exe C$:/Users/tyler/Desktop/structure/bin/tst.exe
 
 # =============================================================================
 # Built-in targets

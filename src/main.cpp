@@ -42,7 +42,7 @@ int main()
     hsize_t dim[2] = {1 * point_num, ep90_size};
 
     Store_h5 store_h5 = Store_h5(s, file_name, dataset_name, point_num, dim, 10);
-    store_h5.do_store(1);
+    store_h5.do_store(2);
 
     // HF5 myh5 = HF5(file_name, dataset_name, dim, 0);
 

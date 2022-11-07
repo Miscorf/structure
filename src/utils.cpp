@@ -44,3 +44,13 @@ int EP90_size(char c[], int len)
 void ofstr(char c[], int len)
 {
 }
+
+int32_t change_4int8_to_int32(char buf[])
+{
+    __int8 d1 = buf[0];
+    __int8 d2 = buf[1];
+    __int8 d3 = buf[2];
+    __int8 d4 = buf[3];
+    __int32 res = (d1 << 24) | (d2 << 16) | (d3 << 8) | d4;
+    return res;
+}

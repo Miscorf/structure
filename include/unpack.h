@@ -4,6 +4,8 @@
 #include <winsock2.h>
 #include <WS2tcpip.h>
 #include <iostream>
+#include <vector>
+
 #include "utils.h"
 
 // 解包、处理数据报类
@@ -18,6 +20,7 @@ public:
     boolean clear();
     int get_pluse_size();
     boolean check_next_pluse();
+    boolean do_unpack(char *buf);
     ~Unpack();
 };
 

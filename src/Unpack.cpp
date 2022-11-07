@@ -42,6 +42,12 @@ boolean Unpack::clear()
     recv_data_size = recv(socket_id, drop_buf, flag, 0);
     return check_next_pluse();
 }
+boolean Unpack::do_unpack(char *buf)
+{
+    std::vector<char> data;
+    std::vector<time_t> time;
+    int pluse_id;
+}
 
 int Unpack::get_pluse_size()
 {
