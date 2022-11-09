@@ -15,8 +15,9 @@ private:
     hsize_t dim[2]; // 存储的维度 dim[1]为数据大小
     // HF5 hf5;
     int store_num; // 存储系数
-    char *buf;
     std::vector<char> v_buf;
+    int buf_size = 0;
+    char *bufp;
 
 public:
     Store_h5(SOCKET id, int store_num, hsize_t dim[]);

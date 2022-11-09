@@ -12,13 +12,13 @@ using namespace std;
 
 int main()
 {
-    //生产环境
-    // char *ip = "198.162.10.16";
-    // int port = 24;
+    // 生产环境
+    char *ip = "192.168.10.16";
+    int port = 24;
 
-    //测试环境
-    char *ip = "127.0.0.1";
-    int port = 9000;
+    // //测试环境
+    // char *ip = "127.0.0.1";
+    // int port = 9000;
     // 创建udp控制
     UDP_control control = UDP_control(ip, port);
     SOCKET s = control.socket_id;

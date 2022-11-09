@@ -1,6 +1,6 @@
 #include "Unpack.h"
 
-#define MAX_PLUSE_SIZE 1000 // 每个脉冲最大字节数
+#define MAX_PLUSE_SIZE 5000 // 每个脉冲最大字节数
 
 Unpack::Unpack(SOCKET id)
 {

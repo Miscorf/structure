@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/tyler/Desktop/structure
+# Install script for directory: C:/Users/USTC/Desktop/structure
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,30 +39,30 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "C:/Users/tyler/Desktop/structure/lib/libuDASAPI.dll.a")
+   "C:/Users/USTC/Desktop/structure/lib/libuDASAPI.dll.a")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "C:/Users/tyler/Desktop/structure/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/tyler/Desktop/structure/bin/libuDASAPI.dll.a")
+  file(INSTALL DESTINATION "C:/Users/USTC/Desktop/structure/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/USTC/Desktop/structure/bin/libuDASAPI.dll.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "C:/Users/tyler/Desktop/structure/lib/uDASAPI.dll")
+   "C:/Users/USTC/Desktop/structure/lib/uDASAPI.dll")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "C:/Users/tyler/Desktop/structure/lib" TYPE SHARED_LIBRARY FILES "C:/Users/tyler/Desktop/structure/bin/uDASAPI.dll")
-  if(EXISTS "$ENV{DESTDIR}/C:/Users/tyler/Desktop/structure/lib/uDASAPI.dll" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/C:/Users/tyler/Desktop/structure/lib/uDASAPI.dll")
+  file(INSTALL DESTINATION "C:/Users/USTC/Desktop/structure/lib" TYPE SHARED_LIBRARY FILES "C:/Users/USTC/Desktop/structure/bin/uDASAPI.dll")
+  if(EXISTS "$ENV{DESTDIR}/C:/Users/USTC/Desktop/structure/lib/uDASAPI.dll" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/C:/Users/USTC/Desktop/structure/lib/uDASAPI.dll")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "C:/mingw64/bin/strip.exe" "$ENV{DESTDIR}/C:/Users/tyler/Desktop/structure/lib/uDASAPI.dll")
+      execute_process(COMMAND "C:/mingw64/bin/strip.exe" "$ENV{DESTDIR}/C:/Users/USTC/Desktop/structure/lib/uDASAPI.dll")
     endif()
   endif()
 endif()
@@ -75,5 +75,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/tyler/Desktop/structure/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/USTC/Desktop/structure/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

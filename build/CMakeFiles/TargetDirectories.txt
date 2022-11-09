@@ -1,9 +1,8 @@
-C:/Users/tyler/Desktop/structure/build/CMakeFiles/include.dir
-C:/Users/tyler/Desktop/structure/build/CMakeFiles/st.dir
-C:/Users/tyler/Desktop/structure/build/CMakeFiles/tst.dir
-C:/Users/tyler/Desktop/structure/build/CMakeFiles/edit_cache.dir
-C:/Users/tyler/Desktop/structure/build/CMakeFiles/rebuild_cache.dir
-C:/Users/tyler/Desktop/structure/build/CMakeFiles/list_install_components.dir
-C:/Users/tyler/Desktop/structure/build/CMakeFiles/install.dir
-C:/Users/tyler/Desktop/structure/build/CMakeFiles/install/local.dir
-C:/Users/tyler/Desktop/structure/build/CMakeFiles/install/strip.dir
+C:/Users/USTC/Desktop/structure/build/CMakeFiles/include.dir
+C:/Users/USTC/Desktop/structure/build/CMakeFiles/st.dir
+C:/Users/USTC/Desktop/structure/build/CMakeFiles/edit_cache.dir
+C:/Users/USTC/Desktop/structure/build/CMakeFiles/rebuild_cache.dir
+C:/Users/USTC/Desktop/structure/build/CMakeFiles/list_install_components.dir
+C:/Users/USTC/Desktop/structure/build/CMakeFiles/install.dir
+C:/Users/USTC/Desktop/structure/build/CMakeFiles/install/local.dir
+C:/Users/USTC/Desktop/structure/build/CMakeFiles/install/strip.dir
