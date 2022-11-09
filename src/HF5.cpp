@@ -2,7 +2,7 @@
 HF5 ::HF5()
 {
 }
-HF5::HF5(char *file_name, char *dataset_name, hsize_t _chunk_dims[], int time_flag)
+HF5::HF5(char *file_name, char *dataset_name, hsize_t _chunk_dims[])
 {
     hsize_t size[2];
     dataspace = H5Screate_simple(RANK, dims, maxdims);

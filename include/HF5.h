@@ -20,7 +20,7 @@ private:
 
 public:
     HF5();
-    HF5(char *file_name, char *dataset_name, hsize_t _chunk_dims[], int time_flag);
+    HF5(char *file_name, char *dataset_name, hsize_t _chunk_dims[]);
     void get_dims(hsize_t *buf);
     herr_t extend_write_chunk(hsize_t dimsext[], void *dataext);
     herr_t close();

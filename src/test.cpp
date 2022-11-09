@@ -5,6 +5,7 @@
 #include <H5Cpp.h>
 #include "HF5.h"
 #include <iostream>
+#include <thread>
 using namespace std;
 int main2()
 {
@@ -12,7 +13,7 @@ int main2()
     char dataset_name[20] = "my_test_dataset";
     hsize_t dim[2] = {1, 3};
     int data[1][3] = {{1, 1, 3}};
-    HF5 myh5 = HF5(file_name, dataset_name, dim, 0);
+    HF5 myh5 = HF5(file_name, dataset_name, dim);
     // hsize_t buf[2];
     // myh5.get_dims(buf);
     // cout << "buf:" << buf[0] << " " << buf[1] << endl;
@@ -42,9 +43,21 @@ void test_4_8_to_32()
     __int32 data_u32 = (d1 << 24) | (d2 << 16) | (d3 << 8) | d4;
     cout << "d:" << d1 << "d:" << d2 << "d:" << data_u32 << endl;
 }
-int main(void)
+void method(int vec[])
 {
-    test_4_8_to_32();
+    // 对vec进行操作
+    for (size_t i = 0; i < 5; i++)
+    {
+        cout << vec[i];
+    }
+}
+int main1(void)
+{
+    // int vec[5] = {1, 2, 3, 4, 5};
+    // thread t(method, &vec);
+    // t.detach();
+
+    // test_4_8_to_32();
     // int a = -112;
     // printf("%X", a);
     // cout << endl;

@@ -10,7 +10,7 @@ using namespace std;
 //勿忘，链接dll的lib
 // #pragma comment(lib, "ws2_32.lib")
 
-int main1()
+int main()
 {
     //生产环境
     // char *ip = "198.162.10.16";
@@ -41,8 +41,8 @@ int main1()
     // chunk dim
     hsize_t dim[2] = {1 * point_num, ep90_size};
 
-    Store_h5 store_h5 = Store_h5(s, file_name, dataset_name, point_num, dim, 10);
-    store_h5.do_store(2);
+    Store_h5 store_h5 = Store_h5(s, point_num, dim);
+    store_h5.do_store(file_name, dataset_name, 2, 5);
 
     // HF5 myh5 = HF5(file_name, dataset_name, dim, 0);
 

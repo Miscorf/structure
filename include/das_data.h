@@ -1,10 +1,9 @@
 #pragma once
 #include <time.h>
+#include <vector>
 class das_data
 {
 private:
-    int value = 0;
-    unsigned __int16 core_id[2];
     unsigned __int32 pluse_id;
 
     unsigned __int16 year;
@@ -16,13 +15,16 @@ private:
     unsigned __int8 ms;
     unsigned __int16 us;
     unsigned __int16 valid;
-
+    int value = 0;
+    unsigned __int16 core_id[2];
     unsigned int data_size;
     __int32 end;
-    char16_t data[1000];
 
 public:
+    std::vector<uint8_t> data;
     das_data(char *buf, int size);
+    int get_data_size();
+    std::vector<uint8_t> get_data();
     int check_head(char *head);
     ~das_data();
 };
