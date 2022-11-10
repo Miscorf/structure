@@ -27,10 +27,10 @@
 		{
 			"backtrace" : 1,
 			"component" : "Unspecified",
-			"destination" : "C:/Users/USTC/Desktop/structure/lib",
+			"destination" : "C:/Users/tyler/Desktop/structure/lib",
 			"paths" : 
 			[
-				"C:/Users/USTC/Desktop/structure/bin/libuDASAPI.dll.a"
+				"C:/Users/tyler/Desktop/structure/bin/libuDASAPI.dll.a"
 			],
 			"targetId" : "include::@6890427a1f51a3e7e1df",
 			"targetIndex" : 0,
@@ -40,10 +40,10 @@
 		{
 			"backtrace" : 1,
 			"component" : "Unspecified",
-			"destination" : "C:/Users/USTC/Desktop/structure/lib",
+			"destination" : "C:/Users/tyler/Desktop/structure/lib",
 			"paths" : 
 			[
-				"C:/Users/USTC/Desktop/structure/bin/uDASAPI.dll"
+				"C:/Users/tyler/Desktop/structure/bin/uDASAPI.dll"
 			],
 			"targetId" : "include::@6890427a1f51a3e7e1df",
 			"targetIndex" : 0,

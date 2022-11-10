@@ -2,13 +2,13 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "C:/Users/USTC/Desktop/structure/bin/uDASAPI.dll"
+			"path" : "C:/Users/tyler/Desktop/structure/bin/uDASAPI.dll"
 		},
 		{
-			"path" : "C:/Users/USTC/Desktop/structure/bin/libuDASAPI.dll.a"
+			"path" : "C:/Users/tyler/Desktop/structure/bin/libuDASAPI.dll.a"
 		},
 		{
-			"path" : "C:/Users/USTC/Desktop/structure/bin/uDASAPI.pdb"
+			"path" : "C:/Users/tyler/Desktop/structure/bin/uDASAPI.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -94,15 +94,15 @@
 			[
 				{
 					"backtrace" : 5,
-					"path" : "C:/Users/USTC/Desktop/structure/include"
+					"path" : "C:/Users/tyler/Desktop/structure/include"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "C:/Users/USTC/Desktop/structure/HDF5/include"
+					"path" : "C:/Users/tyler/Desktop/structure/HDF5/include"
 				},
 				{
 					"backtrace" : 7,
-					"path" : "C:/Users/USTC/Desktop/structure/HDF5/include/c"
+					"path" : "C:/Users/tyler/Desktop/structure/HDF5/include/c"
 				}
 			],
 			"language" : "CXX",
@@ -126,11 +126,11 @@
 		[
 			{
 				"backtrace" : 2,
-				"path" : "C:/Users/USTC/Desktop/structure/lib"
+				"path" : "C:/Users/tyler/Desktop/structure/lib"
 			},
 			{
 				"backtrace" : 2,
-				"path" : "C:/Users/USTC/Desktop/structure/lib"
+				"path" : "C:/Users/tyler/Desktop/structure/lib"
 			}
 		],
 		"prefix" : 
@@ -148,7 +148,7 @@
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "-LC:/Users/USTC/Desktop/structure/HDF5/lib/vc14/x64/release",
+				"fragment" : "-LC:\\Users\\tyler\\Desktop\\structure\\HDF5\\lib\\vc14\\x64\\release",
 				"role" : "libraryPath"
 			},
 			{

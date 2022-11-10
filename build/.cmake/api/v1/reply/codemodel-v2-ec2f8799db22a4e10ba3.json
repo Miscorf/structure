@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-0c193b9915f93ca8fdb7.json",
+					"jsonFile" : "directory-.-Debug-b17c22ca494bb8357e23.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.23"
@@ -42,14 +42,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "include::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-include-Debug-3bce8eca39581cd0fcec.json",
+					"jsonFile" : "target-include-Debug-b305572210dc2ca803c1.json",
 					"name" : "include",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "st::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-st-Debug-ed1215bc25d0d124c9c4.json",
+					"jsonFile" : "target-st-Debug-47b65224a49032795db8.json",
 					"name" : "st",
 					"projectIndex" : 0
 				}
@@ -59,8 +59,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/USTC/Desktop/structure/build",
-		"source" : "C:/Users/USTC/Desktop/structure"
+		"build" : "C:/Users/tyler/Desktop/structure/build",
+		"source" : "C:/Users/tyler/Desktop/structure"
 	},
 	"version" : 
 	{

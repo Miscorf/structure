@@ -1,23 +1,30 @@
 #include "Store_h5.h"
 #include "assert.h"
-#define gb 6 * 1024 * 1024 * 1024
+#define GB 1024 * 1024 * 1024
 Store_h5::Store_h5(SOCKET id, int store_num, hsize_t _dim[])
 {
     pluse_size = _dim[1];
     dim[0] = _dim[0];
     dim[1] = _dim[1] - 20 - 4; // 20 开头 4 结尾
     socket_id = id;
-    bufp = new char[100000000];
+    read_buf_size = GB;
+    read_buf = new char[read_buf_size];
 }
 Store_h5::~Store_h5()
 {
-    delete []bufp;
+    delete[] buf;
 }
+void Store_h5::buf_state()
+{
+    std::cout << "read_buf_state:" << (read_buf_begin - read_buf_end) / read_buf_size << std::endl;
+}
+
 boolean Store_h5::do_store(char *file, char *dataset, int _store_num, int sec)
 {
+
     store_num = _store_num;
     size_t recv_size = store_num * pluse_size;
-    char temp_data[recv_size+5];
+    char temp_data[recv_size];
 
     time_t begin_time, after_time;
     begin_time = time(NULL); //获取日历时间
@@ -29,7 +36,7 @@ boolean Store_h5::do_store(char *file, char *dataset, int _store_num, int sec)
     {
         after_time = time(NULL);
         recv_data(temp_data, recv_size);
-        memcpy(bufp + ret * recv_size, temp_data, recv_size);
+        memcpy(buf + ret * recv_size, temp_data, recv_size);
         // for (size_t i = 0; i < store_num; i++)
         // {
         // das_data data = das_data(temp_data + i * pluse_size, pluse_size);
@@ -42,18 +49,52 @@ boolean Store_h5::do_store(char *file, char *dataset, int _store_num, int sec)
     } while (after_time - begin_time < 60);
     buf_size = ret;
     // } while (ret < 1000);
-    return write_hdf5(file, dataset, bufp);
+    return write_hdf5(file, dataset, buf);
+}
+
+boolean Store_h5::do_store_thread(char *file, char *dataset, int _store_num, int sec)
+{
+
+    // read buf thread
+    recv_data_thread();
+
+    // uppack data thread
+    unpack(buf, index);
+
+    // store data thread
+    write_hdf5(file, dataset, buf);
 }
 boolean Store_h5::recv_data(char *buf, int size)
 {
-    int c = recv(socket_id, buf, size, 0);
-    if (c!=size)
+    int recv_size = 0;
+    while (recv_size < size)
     {
-        std::cout<<c<<std::endl;
+        recv_size += recv(socket_id, buf + recv_size, size - recv_size, 0);
+
+        std::cout << recv_size << std::endl;
     }
-    
-    // assert(c==size);
+
+    assert(recv_size == size);
     return c;
+}
+boolean Store_h5::recv_data_thread(char *buf, int size)
+{
+    store_num = _store_num;
+    size_t recv_size = store_num * pluse_size;
+    char temp_data[recv_size];
+    while (1)
+    {
+        recv_data(temp_data, size);
+        if (read_buf_begin + recv_size > read_buf_size)
+        {
+            int t_size = read_buf_begin + recv_size - read_buf_size;
+            memccpy(read_buf + read_buf_begin, temp_data, t_size);
+            read_buf_begin = 0;
+            memccpy(read_buf + read_buf_begin +, temp_data, t_size);
+        }
+
+        memccpy(read_buf + read_buf_begin, temp_data, recv_size);
+    }
 }
 
 boolean Store_h5::write_hdf5(char *file, char *dataset, std::vector<das_data> wdata)

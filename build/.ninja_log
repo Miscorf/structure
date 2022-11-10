@@ -1,0 +1,13 @@
+# ninja log v5
+18	1445	6897002265397111	CMakeFiles/include.dir/src/test.cpp.obj	8c87e4336df4a5cf
+4	446	6897002255258700	CMakeFiles/include.dir/src/HF5.cpp.obj	4b1c1ded95d76ccf
+14	2979	6897002280696320	CMakeFiles/include.dir/src/Unpack.cpp.obj	b3128a74324c8f1a
+10	1183	6897002262714285	CMakeFiles/include.dir/src/das_data.cpp.obj	f21735b2d23e6702
+0	2950	6897002280469306	CMakeFiles/include.dir/src/UDP_control.cpp.obj	e46d56f7bed69dcb
+1653	1773	6897003122343015	C:/Users/tyler/Desktop/structure/bin/st.exe	85df849c14173034
+5	1702	6897002784515801	CMakeFiles/include.dir/src/main.cpp.obj	6d72107988056cc0
+37	2956	6897002280476905	CMakeFiles/include.dir/src/utils.cpp.obj	166d1be45966799d
+11	1686	6897002784356222	CMakeFiles/st.dir/src/main.cpp.obj	331618a106805904
+6	1411	6897003118737849	CMakeFiles/include.dir/src/store_h5.cpp.obj	8efbeffd08af82a9
+1412	1653	6897003121129609	C:/Users/tyler/Desktop/structure/bin/uDASAPI.dll	d9d760932f97e019
+1412	1653	6897003121129609	C:/Users/tyler/Desktop/structure/bin/libuDASAPI.dll.a	d9d760932f97e019
