@@ -12,7 +12,7 @@ Store_h5::Store_h5(SOCKET id, int store_num, hsize_t _dim[])
 }
 Store_h5::~Store_h5()
 {
-    delete[] buf;
+    delete[] read_buf;
 }
 void Store_h5::buf_state()
 {
@@ -36,7 +36,7 @@ boolean Store_h5::do_store(char *file, char *dataset, int _store_num, int sec)
     {
         after_time = time(NULL);
         recv_data(temp_data, recv_size);
-        memcpy(buf + ret * recv_size, temp_data, recv_size);
+        memcpy(read_buf + ret * recv_size, temp_data, recv_size);
         // for (size_t i = 0; i < store_num; i++)
         // {
         // das_data data = das_data(temp_data + i * pluse_size, pluse_size);
@@ -49,20 +49,20 @@ boolean Store_h5::do_store(char *file, char *dataset, int _store_num, int sec)
     } while (after_time - begin_time < 60);
     buf_size = ret;
     // } while (ret < 1000);
-    return write_hdf5(file, dataset, buf);
+    return write_hdf5(file, dataset, read_buf);
 }
 
 boolean Store_h5::do_store_thread(char *file, char *dataset, int _store_num, int sec)
 {
 
-    // read buf thread
-    recv_data_thread();
+    // // read buf thread
+    // recv_data_thread();
 
-    // uppack data thread
-    unpack(buf, index);
+    // // uppack data thread
+    // unpack(read_buf, index);
 
-    // store data thread
-    write_hdf5(file, dataset, buf);
+    // // store data thread
+    // write_hdf5(file, dataset, read_buf);
 }
 boolean Store_h5::recv_data(char *buf, int size)
 {
@@ -75,11 +75,9 @@ boolean Store_h5::recv_data(char *buf, int size)
     }
 
     assert(recv_size == size);
-    return c;
 }
 boolean Store_h5::recv_data_thread(char *buf, int size)
 {
-    store_num = _store_num;
     size_t recv_size = store_num * pluse_size;
     char temp_data[recv_size];
     while (1)
@@ -88,12 +86,12 @@ boolean Store_h5::recv_data_thread(char *buf, int size)
         if (read_buf_begin + recv_size > read_buf_size)
         {
             int t_size = read_buf_begin + recv_size - read_buf_size;
-            memccpy(read_buf + read_buf_begin, temp_data, t_size);
+            memcpy(read_buf + read_buf_begin, temp_data, t_size);
             read_buf_begin = 0;
-            memccpy(read_buf + read_buf_begin +, temp_data, t_size);
+            memcpy(read_buf + read_buf_begin, temp_data, t_size);
         }
 
-        memccpy(read_buf + read_buf_begin, temp_data, recv_size);
+        memcpy(read_buf + read_buf_begin, temp_data, recv_size);
     }
 }
 
