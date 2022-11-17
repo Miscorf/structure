@@ -42,7 +42,11 @@ int main()
     hsize_t dim[2] = {1 * point_num, ep90_size};
 
     Store_h5 store_h5 = Store_h5(s, point_num, dim);
-    store_h5.do_store(file_name, dataset_name, 2, 5);
+    store_h5.do_store(file_name, dataset_name, 1, 60);
+    cout << "end";
+    store_h5.do_store(file_name, dataset_name, 2, 60);
+    cout << "end";
+    store_h5.do_store(file_name, dataset_name, 5, 60);
 
     cout << "end";
     return 0;
