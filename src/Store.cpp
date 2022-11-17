@@ -8,7 +8,7 @@ Store::Store(SOCKET id, int store_num, hsize_t _dim[])
     dim[1] = _dim[1] - 20 - 4; // 20 开头 4 结尾
     socket_id = id;
     read_buf_size = GB;
-    read_buf = new char[4 * 1024 * 1024 * 1024];
+    read_buf = new char[2*1024 * 1024 * 1024-10];
 }
 Store::~Store()
 {
@@ -36,7 +36,7 @@ boolean Store::do_store(char *file, char *dataset, int _store_num, int sec)
     {
         after_time = time(NULL);
         recv_data(temp_data, recv_size);
-        memcpy(read_buf + ret * recv_size, temp_data, recv_size);
+        // memcpy(read_buf + ret * recv_size, temp_data, recv_size);
         // for (size_t i = 0; i < store_num; i++)
         // {
         // das_data data = das_data(temp_data + i * pluse_size, pluse_size);

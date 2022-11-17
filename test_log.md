@@ -18,7 +18,7 @@
 | time | 300s |
 |frequence |40khz|
 |pluse_size |416B|
-|recv ||6024164|2427560|
+|recv |11996268|6024164|2427560|
 |memcpy| |||
 |write hdf5 ||||
 
@@ -33,3 +33,16 @@
 |memcpy| |||
 |write hdf5 ||||
 
+
+
+connet right!
+check:-21 -112
+pluse_size:176
+clear right!
+sec: 60
+ret:2724480
+endsec: 60
+ret:1199988
+endsec: 60
+ret:479997
+end
