@@ -57,6 +57,14 @@ build CMakeFiles/include.dir/src/HF5.cpp.obj: CXX_COMPILER__include_Debug C$:/Us
   OBJECT_DIR = CMakeFiles\include.dir
   OBJECT_FILE_DIR = CMakeFiles\include.dir\src
 
+build CMakeFiles/include.dir/src/Store.cpp.obj: CXX_COMPILER__include_Debug C$:/Users/tyler/Desktop/structure/src/Store.cpp || cmake_object_order_depends_target_include
+  DEFINES = -Dinclude_EXPORTS
+  DEP_FILE = CMakeFiles\include.dir\src\Store.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include -IC:/Users/tyler/Desktop/structure/HDF5/include/c
+  OBJECT_DIR = CMakeFiles\include.dir
+  OBJECT_FILE_DIR = CMakeFiles\include.dir\src
+
 build CMakeFiles/include.dir/src/UDP_control.cpp.obj: CXX_COMPILER__include_Debug C$:/Users/tyler/Desktop/structure/src/UDP_control.cpp || cmake_object_order_depends_target_include
   DEFINES = -Dinclude_EXPORTS
   DEP_FILE = CMakeFiles\include.dir\src\UDP_control.cpp.obj.d
@@ -89,14 +97,6 @@ build CMakeFiles/include.dir/src/main.cpp.obj: CXX_COMPILER__include_Debug C$:/U
   OBJECT_DIR = CMakeFiles\include.dir
   OBJECT_FILE_DIR = CMakeFiles\include.dir\src
 
-build CMakeFiles/include.dir/src/store_h5.cpp.obj: CXX_COMPILER__include_Debug C$:/Users/tyler/Desktop/structure/src/store_h5.cpp || cmake_object_order_depends_target_include
-  DEFINES = -Dinclude_EXPORTS
-  DEP_FILE = CMakeFiles\include.dir\src\store_h5.cpp.obj.d
-  FLAGS = -g
-  INCLUDES = -IC:/Users/tyler/Desktop/structure/include -IC:/Users/tyler/Desktop/structure/HDF5/include -IC:/Users/tyler/Desktop/structure/HDF5/include/c
-  OBJECT_DIR = CMakeFiles\include.dir
-  OBJECT_FILE_DIR = CMakeFiles\include.dir\src
-
 build CMakeFiles/include.dir/src/test.cpp.obj: CXX_COMPILER__include_Debug C$:/Users/tyler/Desktop/structure/src/test.cpp || cmake_object_order_depends_target_include
   DEFINES = -Dinclude_EXPORTS
   DEP_FILE = CMakeFiles\include.dir\src\test.cpp.obj.d
@@ -121,7 +121,7 @@ build CMakeFiles/include.dir/src/utils.cpp.obj: CXX_COMPILER__include_Debug C$:/
 #############################################
 # Link the shared library C:\Users\tyler\Desktop\structure\bin\uDASAPI.dll
 
-build C$:/Users/tyler/Desktop/structure/bin/uDASAPI.dll C$:/Users/tyler/Desktop/structure/bin/libuDASAPI.dll.a: CXX_SHARED_LIBRARY_LINKER__include_Debug CMakeFiles/include.dir/src/HF5.cpp.obj CMakeFiles/include.dir/src/UDP_control.cpp.obj CMakeFiles/include.dir/src/Unpack.cpp.obj CMakeFiles/include.dir/src/das_data.cpp.obj CMakeFiles/include.dir/src/main.cpp.obj CMakeFiles/include.dir/src/store_h5.cpp.obj CMakeFiles/include.dir/src/test.cpp.obj CMakeFiles/include.dir/src/utils.cpp.obj
+build C$:/Users/tyler/Desktop/structure/bin/uDASAPI.dll C$:/Users/tyler/Desktop/structure/bin/libuDASAPI.dll.a: CXX_SHARED_LIBRARY_LINKER__include_Debug CMakeFiles/include.dir/src/HF5.cpp.obj CMakeFiles/include.dir/src/Store.cpp.obj CMakeFiles/include.dir/src/UDP_control.cpp.obj CMakeFiles/include.dir/src/Unpack.cpp.obj CMakeFiles/include.dir/src/das_data.cpp.obj CMakeFiles/include.dir/src/main.cpp.obj CMakeFiles/include.dir/src/test.cpp.obj CMakeFiles/include.dir/src/utils.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -g
   LINK_LIBRARIES = -lhdf5  -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LC:/Users/tyler/Desktop/structure/HDF5/lib/vc14/x64/release

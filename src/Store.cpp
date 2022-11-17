@@ -1,7 +1,7 @@
-#include "Store_h5.h"
+#include "Store.h"
 #include "assert.h"
 #define GB 1024 * 1024 * 1024
-Store_h5::Store_h5(SOCKET id, int store_num, hsize_t _dim[])
+Store::Store(SOCKET id, int store_num, hsize_t _dim[])
 {
     pluse_size = _dim[1];
     dim[0] = _dim[0];
@@ -10,16 +10,16 @@ Store_h5::Store_h5(SOCKET id, int store_num, hsize_t _dim[])
     read_buf_size = GB;
     read_buf = new char[4 * 1024 * 1024 * 1024];
 }
-Store_h5::~Store_h5()
+Store::~Store()
 {
     delete[] read_buf;
 }
-void Store_h5::buf_state()
+void Store::buf_state()
 {
     std::cout << "read_buf_state:" << (read_buf_begin - read_buf_end) / read_buf_size << std::endl;
 }
 
-boolean Store_h5::do_store(char *file, char *dataset, int _store_num, int sec)
+boolean Store::do_store(char *file, char *dataset, int _store_num, int sec)
 {
     std::cout << "sec: " << sec << std::endl;
     store_num = _store_num;
@@ -53,7 +53,7 @@ boolean Store_h5::do_store(char *file, char *dataset, int _store_num, int sec)
     // return write_hdf5(file, dataset, read_buf);
 }
 
-boolean Store_h5::do_store_thread(char *file, char *dataset, int _store_num, int sec)
+boolean Store::do_store_thread(char *file, char *dataset, int _store_num, int sec)
 {
 
     // // read buf thread
@@ -65,7 +65,7 @@ boolean Store_h5::do_store_thread(char *file, char *dataset, int _store_num, int
     // // store data thread
     // write_hdf5(file, dataset, buf);
 }
-boolean Store_h5::recv_data(char *buf, int size)
+boolean Store::recv_data(char *buf, int size)
 {
     int recv_size = 0;
     while (recv_size < size)
@@ -77,7 +77,7 @@ boolean Store_h5::recv_data(char *buf, int size)
 
     assert(recv_size == size);
 }
-boolean Store_h5::recv_data_thread(char *buf, int size)
+boolean Store::recv_data_thread(char *buf, int size)
 {
     // store_num = _store_num;
     // size_t recv_size = store_num * pluse_size;
@@ -97,7 +97,7 @@ boolean Store_h5::recv_data_thread(char *buf, int size)
     // }
 }
 
-boolean Store_h5::write_hdf5(char *file, char *dataset, std::vector<das_data> wdata)
+boolean Store::write_hdf5(char *file, char *dataset, std::vector<das_data> wdata)
 {
     HF5 hf5 = HF5(file, dataset, dim);
     int d_size = wdata[0].get_data_size();
@@ -112,7 +112,7 @@ boolean Store_h5::write_hdf5(char *file, char *dataset, std::vector<das_data> wd
     return hf5.close();
 }
 
-boolean Store_h5::write_hdf5(char *file, char *dataset, char *wdata)
+boolean Store::write_hdf5(char *file, char *dataset, char *wdata)
 {
     std::cout << "buf_size: " << buf_size << std::endl;
     std::cout << "store_num: " << store_num << std::endl;

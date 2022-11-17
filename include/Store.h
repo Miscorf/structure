@@ -1,5 +1,5 @@
-#ifndef _STORE_H5
-#define _STORE_H5
+#ifndef _Store
+#define _Store
 
 #include <winsock2.h>
 #include <vector>
@@ -8,7 +8,7 @@
 #include "das_data.h"
 #include "HF5.h"
 
-class Store_h5
+class Store
 {
 private:
     SOCKET socket_id;
@@ -31,8 +31,8 @@ private:
     int handle_buf_end = 0;
 
 public:
-    Store_h5(SOCKET id, int store_num, hsize_t _dim[]);
-    ~Store_h5();
+    Store(SOCKET id, int store_num, hsize_t _dim[]);
+    ~Store();
     boolean recv_data(char *buf, int size);
     boolean recv_data_thread(char *buf, int size);
     boolean write_hdf5(char *file, char *dataset, char *wdata);
