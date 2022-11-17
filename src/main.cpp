@@ -47,7 +47,6 @@ int main()
     cout << "end";
     store.do_store(file_name, dataset_name, 5, 60);
     Store store = Store(s, point_num, dim);
-    store.do_store(file_name, dataset_name, 2, 5);
 
     cout << "end";
     return 0;
