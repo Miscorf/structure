@@ -1,3 +1,4 @@
+#include <pthread.h>
 #include "Store.h"
 #include "assert.h"
 #define GB 1024 * 1024 * 1024
@@ -7,8 +8,8 @@ Store::Store(SOCKET id, int store_num, hsize_t _dim[])
     dim[0] = _dim[0];
     dim[1] = _dim[1] - 20 - 4; // 20 开头 4 结尾
     socket_id = id;
-    read_buf_size = GB;
-    read_buf = new char[2 * 1024 * 1024 * 1024 - 10];
+    read_buf_size = dim[1] * 1024 * 1024;
+    read_buf = new char[dim[1] * 1024 * 1024];
 }
 Store::~Store()
 {
@@ -16,7 +17,7 @@ Store::~Store()
 }
 void Store::buf_state()
 {
-    std::cout << "read_buf_state:" << (read_buf_begin - read_buf_end) / read_buf_size << std::endl;
+    std::cout << "read_buf_state:" << (read_buf_begin - read_buf_end + read_buf_size) % read_buf_size / read_buf_size << std::endl;
 }
 
 boolean Store::do_store(char *file, char *dataset, int _store_num, int sec)
@@ -27,7 +28,7 @@ boolean Store::do_store(char *file, char *dataset, int _store_num, int sec)
     char temp_data[recv_size];
 
     time_t begin_time, after_time;
-    begin_time = time(NULL); //获取日历时间
+    begin_time = time(NULL); //获取时间
     // unpack(buf);
     int ret = 0;
 
@@ -74,42 +75,44 @@ boolean Store::recv_data(char *buf, int size)
 
         // std::cout << recv_size << std::endl;
     }
-
     assert(recv_size == size);
 }
 boolean Store::recv_data_thread(char *buf, int size)
 {
-    // store_num = _store_num;
-    // size_t recv_size = store_num * pluse_size;
-    // char temp_data[recv_size];
-    // while (1)
-    // {
-    //     recv_data(temp_data, size);
-    //     if (read_buf_begin + recv_size > read_buf_size)
-    //     {
-    //         int t_size = read_buf_begin + recv_size - read_buf_size;
-    //         memccpy(read_buf + read_buf_begin, temp_data, t_size);
-    //         read_buf_begin = 0;
-    //         memccpy(read_buf + read_buf_begin +, temp_data, t_size);
-    //     }
+    int recv_size = 0;
+    int loop = 0;
+    while (1)
+    {
+        loop++;
+        while (recv_size < size)
+        {
+            recv_size += recv(socket_id, read_buf + read_buf_begin + recv_size, size - recv_size, 0);
 
-    //     memccpy(read_buf + read_buf_begin, temp_data, recv_size);
-    // }
+            read_buf_begin += recv_size;
+            read_buf_begin = read_buf_begin % read_buf_size;
+        }
+        assert(recv_size == size);
+        recv_size = 0;
+        if (loop % 10 == 0)
+        {
+            buf_state();
+        }
+    }
 }
-
-boolean Store::write_hdf5(char *file, char *dataset, std::vector<das_data> wdata)
+boolean Store::write_hdf5_thread(char *file, char *dataset, char *wdata)
 {
-    HF5 hf5 = HF5(file, dataset, dim);
-    int d_size = wdata[0].get_data_size();
-    int w_size = wdata.size();
-
-    for (size_t i = 0; i < w_size; i++)
+    time_t begin_time, after_time;
+    int sec = 60;
+    begin_time = time(NULL);
+    do
     {
 
-        std::vector<uint8_t> *p = &wdata[i].data;
-        hf5.extend_write_chunk(dim, p);
+        after_time = time(NULL);
+    } while (after_time - begin_time < 10);
+
+    while (1)
+    {
     }
-    return hf5.close();
 }
 
 boolean Store::write_hdf5(char *file, char *dataset, char *wdata)
@@ -126,14 +129,3 @@ boolean Store::write_hdf5(char *file, char *dataset, char *wdata)
     }
     return hf5.close();
 }
-
-// int main()
-// {
-//     char file_name[20] = "my_test_file.h5";
-//     char dataset_name[20] = "my_test_dataset";
-//     hsize_t dim[2] = {1, 4};
-//     HF5 hf5 = HF5(file_name, dataset_name, dim);
-//     char buf[1024] = {0};
-//     hf5.extend_write_chunk(dim, buf);
-//     hf5.close();
-// }
