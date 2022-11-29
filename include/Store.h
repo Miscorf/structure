@@ -33,6 +33,7 @@ private:
 public:
     Store(SOCKET id, int store_num, hsize_t _dim[]);
     ~Store();
+
     boolean recv_data(char *buf, int size);
     boolean recv_data_thread(char *buf, int size);
     boolean write_hdf5(char *file, char *dataset, char *wdata);

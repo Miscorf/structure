@@ -6,21 +6,18 @@
 #include "UDASAPI.h"
 
 using namespace std;
-
-//勿忘，链接dll的lib
-// #pragma comment(lib, "ws2_32.lib")
-
 int main()
 {
+    cout << "clear right!" << endl;
     // 生产环境
-    char *ip = "192.168.10.16";
-    int port = 24;
+    // char *ip = "192.168.10.16";
+    // int port = 24;
 
-    // //测试环境
-    // char *ip = "127.0.0.1";
-    // int port = 9000;
+    // 测试环境
+    char *ip = "127.0.0.1";
+    int port = 9000;
     // 创建udp控制
-    UDP_control control = UDP_control(ip, port);
+    UDP_control control = UDP_control(ip, port, 1);
     SOCKET s = control.socket_id;
     Unpack unpack = Unpack(s);
     // clear and  get pluse size
@@ -42,11 +39,6 @@ int main()
     hsize_t dim[2] = {1 * point_num, ep90_size};
     Store store = Store(s, point_num, dim);
     store.do_store(file_name, dataset_name, 1, 60);
-    cout << "end";
-    store.do_store(file_name, dataset_name, 2, 60);
-    cout << "end";
-    store.do_store(file_name, dataset_name, 5, 60);
-
     cout << "end";
     return 0;
 }

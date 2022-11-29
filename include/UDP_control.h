@@ -16,7 +16,18 @@ private:
 
 public:
     SOCKET socket_id; // 标识
-    UDP_control(char ip[], int port);
+
+    UDP_control(char ip[], int port, int tag);
+
+    /// @brief 开始采集
+    /// @return
+    int start_collect();
+
+    /// @brief 停止采集
+    /// @return
+    int end_collect();
+
+    int tcp_send();
 
 public:
     ~UDP_control();

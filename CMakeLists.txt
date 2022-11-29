@@ -3,7 +3,8 @@ cmake_minimum_required (VERSION 3.23)
 project (demo)
 
 # 头文件
-include_directories (${CMAKE_CURRENT_SOURCE_DIR}/include)
+include_directories (${CMAKE_CURRENT_SOURCE_DIR}/include/)
+# include_directories (${CMAKE_CURRENT_SOURCE_DIR}/include/cyusb)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/HDF5/include/)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/HDF5/include/c)
 
@@ -36,6 +37,7 @@ SET_TARGET_PROPERTIES(include PROPERTIES LINKER_LANGUAGE CXX
 add_executable(st src/main.cpp ${INCLUDES})
 TARGET_LINK_LIBRARIES(st ${LINK_LIBS})
 TARGET_LINK_LIBRARIES(st ${CMAKE_CURRENT_SOURCE_DIR}/bin/uDASAPI.dll)
+TARGET_LINK_LIBRARIES(st ${CMAKE_CURRENT_SOURCE_DIR}/bin/cyusb.dll)
 target_link_libraries(st hdf5.lib)
 
 # add_executable(tst src/test.cpp)

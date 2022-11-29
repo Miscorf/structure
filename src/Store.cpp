@@ -8,7 +8,7 @@ Store::Store(SOCKET id, int store_num, hsize_t _dim[])
     dim[1] = _dim[1] - 20 - 4; // 20 开头 4 结尾
     socket_id = id;
     read_buf_size = GB;
-    read_buf = new char[2*1024 * 1024 * 1024-10];
+    read_buf = new char[2 * 1024 * 1024 * 1024 - 10];
 }
 Store::~Store()
 {
@@ -36,12 +36,12 @@ boolean Store::do_store(char *file, char *dataset, int _store_num, int sec)
     {
         after_time = time(NULL);
         recv_data(temp_data, recv_size);
-        // memcpy(read_buf + ret * recv_size, temp_data, recv_size);
-        // for (size_t i = 0; i < store_num; i++)
-        // {
-        // das_data data = das_data(temp_data + i * pluse_size, pluse_size);
-        // data_buf.push_back(data);
-        // }
+        memcpy(read_buf + ret * recv_size, temp_data, recv_size);
+        for (size_t i = 0; i < store_num; i++)
+        {
+            das_data data = das_data(temp_data + i * pluse_size, pluse_size);
+            data_buf.push_back(data);
+        }
         // std::cout << "temp:" << int(temp_data[0]) << int(temp_data[1]) << std::endl;
 
         // write_hdf5(file, dataset, data_buf);
@@ -50,7 +50,7 @@ boolean Store::do_store(char *file, char *dataset, int _store_num, int sec)
     buf_size = ret;
     std::cout << "ret:" << ret << std::endl;
     // } while (ret < 1000);
-    // return write_hdf5(file, dataset, read_buf);
+    return write_hdf5(file, dataset, read_buf);
 }
 
 boolean Store::do_store_thread(char *file, char *dataset, int _store_num, int sec)
@@ -126,3 +126,14 @@ boolean Store::write_hdf5(char *file, char *dataset, char *wdata)
     }
     return hf5.close();
 }
+
+// int main()
+// {
+//     char file_name[20] = "my_test_file.h5";
+//     char dataset_name[20] = "my_test_dataset";
+//     hsize_t dim[2] = {1, 4};
+//     HF5 hf5 = HF5(file_name, dataset_name, dim);
+//     char buf[1024] = {0};
+//     hf5.extend_write_chunk(dim, buf);
+//     hf5.close();
+// }

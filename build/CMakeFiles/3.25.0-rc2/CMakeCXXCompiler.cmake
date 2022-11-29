@@ -78,6 +78,6 @@ endif()
 
 
 set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++;C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32;C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward;C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include;C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed;C:/mingw64/x86_64-w64-mingw32/include")
-set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;mingw32;gcc_s;gcc;moldname;mingwex;advapi32;shell32;user32;kernel32;iconv;mingw32;gcc_s;gcc;moldname;mingwex")
+set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;mingw32;gcc_s;gcc;moldname;mingwex;pthread;advapi32;shell32;user32;kernel32;iconv;mingw32;gcc_s;gcc;moldname;mingwex")
 set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0;C:/mingw64/lib/gcc;C:/mingw64/x86_64-w64-mingw32/lib;C:/mingw64/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")
